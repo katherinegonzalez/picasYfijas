@@ -103,7 +103,6 @@ def numSecreto():
     numeroSecreto = []
     for i in range(4):
         num = validarNumeroSecreto(numeroSecreto)
-        print(num)
         numeroSecreto.append(num)
     return numeroSecreto
 
