@@ -16,35 +16,32 @@ from GonzalezKPicasFijasHelper import *
 # VARIABLES GLOBALES Y PRE-CONDICIONES
 # ----------------------------------------------------------------------------------------
 
-# Variables de entrada: (str) opcionIngresada
-# pre-condiciones: opcionIngresada debe ser '1', '2', '3', '4', ó '0'
-#                  salir != 'si'
-
-# Variables auxiliares: (str) opcion
-#                       opcion != '0'
+# Variables de entrada: (str) salir
+# pre-condiciones: salir != 'si'
 #
-# Explicación: opción es una variable auxiliar que guarda la opción ingresada por el usuario,
-#              y se encarga de detener el ciclo cuando la opció seleccionada es '0'.
-#              Si opcion es '0', el programa dejará de ejecutarse.
-#              Si opcionIngresada es '1', se ejecuta la función digitosPorDerecha() del módulo importado
-#              Si opcionIngresada es '2', se ejecuta la función digitosPorIzquierda() del módulo importado
-#              Si opcionIngresada es '3', se ejecuta la función multiplicacionRusa() del módulo importado
-#              Si opcionIngresada es '4', se ejecuta la función maxCD() del módulo importado
-#              Si opcionIngresada es '0', se detiene el programa.
+# Variables auxiliares: (lista) listaNumSecreto, (lista) listaNumIntento, (int) cantidadDeIntentos,
+#                       (int) cantidadDeIntentos, (int) numFijas, (int) numPicas
+# pre-condiciones: numFijas != '4'
+#
+# Explicación: salir es una variable para que el usuario decida si desea finalizar el programa,
+#              listaNumSecreto, guarda el número secreto generado por el programa
+#              listaNumIntento, guarda los numeros que el usuario ingresó
+#              cantidadDeIntentos, cuenta las veces que el usuario intentó adivinar el número secreto
+#              numFijas, guarda el número de fijas que calculó el programa, si es 4 el usuario gana.
+#              numPicas, guarda el número de picas que calculó el programa
 #
 # ----------------------------------------------------------------------------------------
 # POSTCONDICIONES
 # ----------------------------------------------------------------------------------------
-# Salida: Mensaje (str) informando los resultados de los cálculos realziados de acuerdo a
-# la selección del usuario.
-
-# Si opcionIngresada es un valor diferente de '0', '1', '2', '3' ó '4' mostrar un mensaje
-# en pantalla, y solicitar el valor nuevamente.
-# Si opcion == '0' , fin del programa.
+# Salida: Mensaje (str) informando el número de picas y fijas
+#
+# Si numFijas es igual a 4, mostrar mensaje en pantall diciendo que el usuario ganó
+# Si salir == 'si' , fin del programa.
+# Si salir == 'no' , Se ejecuta nuevamente el juego
 
 # ----------------------------------------------------------------------------------------
 
-def programa ():
+def programaEjecutable ():
     print('Bienvenido al juego Picas y Fijas')
     print('\n')
     print('He generado un número secreto de 4 dígitos, '
@@ -77,6 +74,6 @@ salir = 'no'
 
 while (salir != 'si'):
     print('\n')
-    programa()
+    programaEjecutable()
     salir = validarFinalizarInput('Si desea Finalizar el juego escriba si, de lo contrario, si quiere volver a jugar, escriba no: ')
 
